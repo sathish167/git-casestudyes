@@ -1,0 +1,323 @@
+1:Basic Git Workflow
+ 1:file name :Hello-world.txt
+2:txt: Hello world
+3:Instalation :
+git init
+git add Hello-world.txt
+git commit -m "hello world"
+ git status
+git add hello-world 
+git remote add origin git@github.com:sathish167/Hello-world.git
+git branch -m main
+git push -u origin main
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+2:Branching and Merging
+
+Create a new directory for your project:
+1:file name: myproject.txt
+1:Initialize a Git repository:
+2:git init
+Stage and commit the initial file:
+ 3:git add myproject.txt
+4:git commit -m "commit on myproject"
+2:Create a new branch for your feature:
+git checkout -b feature-branch 
+echo "this is my new feature.">>myproject.txt
+git add myproject.txt
+git commit -m "feature-branch"
+Switch Back to the Main Branch
+3:Switch back to the main branch:
+git checkout myproject.txt
+echo "eddit for main branch" >>myproject.txt
+git add myproject.txt
+git commit -m "eddit main branch"
+Merge the Feature Branch
+ 4.feature branch back into main:
+git merge feature-branch
+git add myproject.txt
+git commit -m " main after resolving conflict"
+5:branch change
+git branch
+ git branch "mybranch"
+git branch
+master
+  mybranch
+git checkout mybranch
+git branch -m mybranch
+git remote add origin git@github.com:sathish167/Project.git
+git push -u origin mybranch
+
+------------------------------------------------------------------------------------------------------------------
+
+
+3 :Collaborative Workflow
+
+1:file name: javadev.txt
+1:Clone the Repository
+git clone git@github.com:sathish167/java-development.git
+git init
+ git add javadev.txt
+2:Change into the repository directory:
+cd java-development
+git checkout -b javadev
+git add .
+git add javadev.txt
+2:Commit  changes
+git commit -m "java devlopment"
+3:Create a Branch
+git branch 
+git branch "javadev"
+git add commit "javadev"
+git remote add origin git@github.com:sathish167/java-development.git
+4:Push  Changes
+git push origin javadev
+5:Code Review:
+As a team member  navigate to the pull request page.
+Review the changes by looking at the "Files changed" tab.
+Add comments if you have feedback or suggestions.
+If everything looks good, approve the pull request.
+6:Merge the Pull Request:
+After approval, merge the pull request:
+You may have options such as "Merge", "Squash and merge", or "Rebase and merge". Choose the option that fits your workflow.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+4 Reverting Changes
+
+1:Initialize a Git Repository:
+mkdir web-project
+cd my-project
+git init
+echo "frist" > web.txt
+git add web.txt
+git commit -m "to change the content of web design"
+2:Make Changes and Commit
+echo "web development" >> web.txt
+git add file.txt
+git commit -m "one more change" 
+ 3:Undo Changes Using 
+4:git log
+git revert 7758df1167970112a56ea9c815dbf9827e1eaf53
+git status
+5:Undo Changes Using git reset
+6:git log
+git reset 7758df1167970112a56ea9c815dbf9827e1eaf53
+git status
+7:Undo Changes Using git checkout
+git log
+git checkout 7758df1167970112a56ea9c815dbf9827e1eaf53  -- web.txt
+git status
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+5:Using Git with GitHub Pages
+
+
+1:Create a new project folder:
+mkdir html
+cd html
+2:Initialize a Git repository:
+git init
+3:Stage and commit your changes:
+git add index.html
+git commit -m "Initial commit with index.html"
+4: Push to GitHub
+git remote add origin git@github.com:sathish167/Html.git
+git push -u origin main
+<p>this is a web site</p>
+git add html.txt 
+git commit -m "html"
+git push origin main
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+6:Working with Git Tags
+
+1: Initialize a Git Repository
+Create a new project folder:
+mkdir tag
+cd tags
+Initialize a Git repository:
+git init
+git add tags.txt
+git commit -m "tags"
+Make Changes and Create a Release Tag
+3:Simulate a version change by modifying app.py:
+
+echo "print('Version 1.0')" >> tags
+4 Stage and commit the change:
+git add tag.txt
+git commit -m "Update app.py to version 1.0"
+5:Create a tag for this release:
+git tag v1.0
+6:Verify the tag:
+git tag
+7:Push the Tag to Remote Repository
+git remote add origin git@github.com:sathish167/tags.git
+git push -u origin tags
+git push origin v1.0
+8:Make Further Changes and Create Another Tag
+echo "print('Version 1.1')" >> tags.txt
+git add tags
+git commit -m "Update app.py to version 1.1"
+git tag v1.1
+git tag
+git push origin v1.1
+9: View and Manage Tags
+List all tags:
+git tag
+git show v1.0
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+7. Stashing Changes
+
+
+Create a new project folder:
+mkdir tags-conection
+cd tags-connection
+1:Initialize a Git repository:
+git init
+git add app.py
+git commit -m "tags connection"
+2: Make Changes and Stash Them
+echo "chenge" >> app.py
+Check the status to see your uncommitted changes:
+git status
+3Stash your changes:
+git stash
+git stash list
+Step 3: Switch Branches
+git checkout -b feature/temporary-changes
+echo "This is a feature branch." > feature.txt
+git add tags.txt
+git commit -m "Add feature.txt in feature branch"
+Step 4: Apply Your Stashed Changes
+git checkout main
+5:Apply your stashed changes:
+git stash apply
+git status
+Step 5: Clean Up
+git stash drop
+git stash pop
+Verify the stash list:
+git stash list
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+8. Exploring Git History
+
+Step 1: Initialize a Git Repository
+mkdir git-history
+cd git-history
+git init
+git add git-history
+git commit -m "git history"
+Step 2: Make Changes and Commit
+git add git-history
+git commit -m "git history"
+echo "print('Another change.')" >> example.py
+Stage and commit this change:
+git add git-history
+git commit -m "change of history"
+Step 3: Explore the Commit History
+git log
+You can use options to customize the output. For example:
+git log --oneline
+Show commit details:
+git show <commit-hash>
+Replace <commit-hash> with the actual hash from the log.
+4: Compare Changes with git diff
+View changes made in the last commit:
+git diff HEAD^ HEAD
+This shows the differences between the last commit and the one before it.
+
+Compare changes between two specific commits:
+
+If you want to compare two specific commits, use their hashes:
+git diff <commit-hash-1> <commit-hash-2>
+Replace <commit-hash-1> and <commit-hash-2> with the hashes you want to compare.
+git log -p git-history
+-------------------------------------------------------------------------------------------------------------------
+
+
+9 Git Hooks
+
+ Initialize a Git Repository
+mkdir hoocks
+cd hoocks
+git init
+git add hoocks.txt
+git commit -m "hoocks"
+Step 2: Create the Pre-commit Hook
+cd .git/hooks
+touch pre-commit
+chmod +x pre-commit  # Make it executable
+pip install flake8
+#!/bin/sh
+
+# Run flake8 to check for linting issues
+if ! flake8 script.py; then
+    echo "Linting errors detected. Please fix them before committing."
+    exit 1  # Prevent commit
+fi
+
+echo "Linting passed. Proceeding with commit."
+Step 3: Test the Pre-commit Hook
+def my_function():  
+    system.outprintln('Hello, World!')
+git add hoock.txt
+git commit -m "Test commit with linting error"
+def my_function():
+    system.out.print('Hello, World!')
+git add hoock.txt
+git commit -m "Fix linting error"
+
+
+------------------------------------------------------------------------------------------------------------------------
+10. Git Rebase
+
+1:Create a new project folder:
+mkdir rebase
+cd rebase
+2:Initialize a Git repository:
+git init
+git add rebase.txt
+git commit -m "git rebase"
+ 2: Create and Work on a Feature Branch
+git checkout -b feature/my-feature
+echo "print('Hello from my feature!')" >>rebase.txt
+Stage and commit your changes:
+git add rebase.txt
+git commit -m "Add rebase"
+Make another change 
+echo "print('Another change in my feature!')" >> rebase.txt
+Stage and commit this change:
+git add arebase
+git commit -m "chanege rebase"
+3: Update the Main Branch
+git checkout main
+echo "print('New update in main!')" >> rebase.txt
+git add rebase.txt
+git commit -m "Update main with new message"
+4: Rebase the Feature Branch onto Main
+git checkout feature/my-feature
+Verify the rebase:
+git log --oneline --graph --all
+
+
+
+
+
+
+
