@@ -182,32 +182,33 @@ git show v1.0
 
 
 Create a new project folder:
-mkdir tags-conection
-cd tags-connection
+mkdir git casestudyes
+cd git casestudyes
 1:Initialize a Git repository:
 git init
-git add app.py
-git commit -m "tags connection"
+git add stashing-changes.txt
+git commit -m "stashing changes"
 2: Make Changes and Stash Them
-echo "chenge" >> app.py
+echo "chenge" >> stashing-changes.txt
 Check the status to see your uncommitted changes:
 git status
-3Stash your changes:
+3 Stash your changes:
 git stash
 git stash list
 Step 3: Switch Branches
 git checkout -b feature/temporary-changes
-echo "This is a feature branch." > feature.txt
-git add tags.txt
-git commit -m "Add feature.txt in feature branch"
+echo "This is a feature branch." > stashing-changes.txt
+git add stashing-changes.txt
+git commit -m "stash change in feature branch"
 Step 4: Apply Your Stashed Changes
 git checkout main
 5:Apply your stashed changes:
 git stash apply
 git status
+stash@{0}: WIP on stashing: e4dfce5 stashing changes
 Step 5: Clean Up
 git stash drop
-git stash pop
+Dropped refs/stash@{0} (d4e859c2ce62e0102b063f50a9eb340426b798be)
 Verify the stash list:
 git stash list
 
